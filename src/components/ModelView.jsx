@@ -7,35 +7,35 @@ import { useState, useEffect, Suspense, useRef } from "react";
 
 const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, size, item }) => {
   const [isGrabbing, setIsGrabbing] = useState(false);
-  const [shouldLoad, setShouldLoad] = useState(false);
+  // const [shouldLoad, setShouldLoad] = useState(false);
 
-  const wrapperRef = useRef(null);
+  // const wrapperRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShouldLoad(true);
-          observer.disconnect();
-        }
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      }
-    );
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         setShouldLoad(true);
+  //         observer.disconnect();
+  //       }
+  //     },
+  //     {
+  //       root: null,
+  //       rootMargin: "0px",
+  //       threshold: 0.1,
+  //     }
+  //   );
 
-    if (wrapperRef.current) {
-      observer.observe(wrapperRef.current);
-    }
+  //   if (wrapperRef.current) {
+  //     observer.observe(wrapperRef.current);
+  //   }
 
-    return () => {
-      if (wrapperRef.current) {
-        observer.unobserve(wrapperRef.current);
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (wrapperRef.current) {
+  //       observer.unobserve(wrapperRef.current);
+  //     }
+  //   };
+  // }, []);
   return (
         <View
           index={index}
