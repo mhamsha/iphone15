@@ -74,7 +74,6 @@ const VideoCarousel = () => {
             gsap.to(span[videoId], {
               backgroundColor: "#afafaf",
             });
-            // setPreviousAnim(anim);
           }
         },
       });
@@ -128,10 +127,6 @@ const VideoCarousel = () => {
       case "play":
         setVideo((pre) => ({ ...pre, isPlaying: !pre.isPlaying }));
         break;
-      // case "video-jumped":
-      //   videoRef.current[videoId].pause();
-      //   setVideo((pre) => ({ ...pre, videoId: i }));
-      //   break;
 
       default:
         return video;
@@ -156,7 +151,7 @@ const VideoCarousel = () => {
                   onEnded={() =>
                     i !== 3 ? handleProcess("video-end", i) : handleProcess("video-last")
                   }
-                  onPlay={() => setVideo((pre) => ({ ...pre, isPlaying: true }))}
+                  // onPlay={() => setVideo((pre) => ({ ...pre, isPlaying: true }))}
                   onLoadedMetadata={(e) => handleLoadedMetaData(i, e)}
                 >
                   <source src={list.video} type="video/mp4" />
